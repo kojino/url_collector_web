@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# 
+# Url.create(url: 'https://github.com/', shared_at: Time.now, channel: "url_collector_test")
+# Url.create(url: 'https://google.com/', shared_at: Time.now, channel: "resources")
+# Url.create(url: 'https://facebook.com/', shared_at: Time.now, channel: "general")
