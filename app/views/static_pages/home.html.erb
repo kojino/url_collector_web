@@ -14,11 +14,8 @@
     <th>Shared At</th>
   </tr>
   <% @urls.each do |url| %>
-    <% object = LinkThumbnailer.generate(url.url) %>
     <tr>
       <td><a href="<%= url.url %>">Visit</a></td>
-      <td><%= object.title[0,20] %></td>
-      <td><%= object.description[0,80] %></td>
       <td><%= url.channel %></td>
       <td><%= url.shared_at %></td>
     </tr>
