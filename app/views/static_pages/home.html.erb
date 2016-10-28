@@ -1,25 +1,32 @@
 <h1>Make School Resources</h1>
 <form class="form-inline" role="form">
     <%= form_tag(static_pages_home_path, :method => "get") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Resources" %>
-    <%= submit_tag "Search" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Resources", :class => "form-control"%>
+    <%= submit_tag "Search", :class=>'btn btn-default'%>
     <% end %>
 </form>
+
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Channel</th>
-    <th>Shared At</th>
+    <th id='1'></th>
+    <th id='2'></th>
+    <th id='3'>Title</th>
+    <th id='4'>Description</th>
+    <th id='5'>Channel</th>
+    <th id='6'>Shared At</th>
   </tr>
+  <% i = 0 %>
   <% @urls.each do |url| %>
+    <% i += 1 %>
     <tr>
       <td><a href="<%= url.url %>">Visit</a></td>
-      <td><img src="<%= url.image %>" alt=""/></td>
-      <td><%= truncate(url.title, length: 140) %></td>
-      <td><%= truncate(url.description, length: 140) %></td>
+      <% if url.image.nil? %>
+        <td></td>
+      <% else %>
+        <td><img src="<%= url.image %>" alt=""/></td>
+      <% end %>
+      <td><%= truncate(url.title, length: 100) %></td>
+      <td><%= truncate(url.description, length: 200) %></td>
       <td><%= truncate(url.channel, length: 30)%></td>
       <td><%= url.shared_at %></td>
     </tr>

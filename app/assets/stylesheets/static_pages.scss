@@ -2,20 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  font-family: Avenir Next;
+  padding: 3% 10% 3% 10%;
+}
+form {
+  margin: 0;
+  margin-top: 3%;
+  width: 30%;
+}
+
 table {
-    font-family: arial, sans-serif;
+    background-color: white;
     border-collapse: collapse;
-    width: 100%;
+    width: 90%;
+    margin-top: 2%;
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    font-size: 150%;
+    border: none;
     text-align: left;
     padding: 8px;
+    
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    // background-color: #dddddd;
 }
 
 img {
