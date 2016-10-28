@@ -17,10 +17,10 @@
   <% @urls.each do |url| %>
     <tr>
       <td><a href="<%= url.url %>">Visit</a></td>
-      <td><img src="<%= url.image %>" alt="not found"/></td>
-      <td><%= url.title %></td>
-      <td><%= url.description %></td>
-      <td><%= url.channel %></td>
+      <td><img src="<%= url.image %>" alt=""/></td>
+      <td><%= truncate(url.title, length: 140) %></td>
+      <td><%= truncate(url.description, length: 140) %></td>
+      <td><%= truncate(url.channel, length: 30)%></td>
       <td><%= url.shared_at %></td>
     </tr>
   <% end %>
